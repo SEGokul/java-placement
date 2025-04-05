@@ -19,12 +19,12 @@ public class Arrayfrequency {
         }
         if (count != 0){ System.out.println(arr[i]+" "+ count + " "+ "times");}
         if (count>maxcount){maxcount=count;maxelement=arr[i];}
-        else if ((count!=0)&&(count<=leastcount)){leastcount=count;leastelement=arr[i];}
+        else if (count<=leastcount){leastcount=count;leastelement=arr[i];}
         count = 0;
         newarray[i]=arr[i];
         }
-        System.out.println(maxcount+"  appears "+ maxelement+"times");
-        System.out.println(leastcount+"   appears"+leastelement+"times");
+        System.out.println(maxcount+" "+ maxelement);
+        System.out.println(leastcount+" "+leastelement);
 }
         public static void main(String args[]){
         int arr [] ={10,5,10,15,10,5};

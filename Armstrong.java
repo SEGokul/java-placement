@@ -1,48 +1,32 @@
-import java.util.Scanner;
-class Armstrong{
-public static int arm(int num){
-
-int temp = num;
-int count = 0 ;
-int power = 1 ;
-int sum = 0 ;
-
-while(num>0){
-count = count+1;
-int lastdigit=num%10;
-num=num/10;}
-
-num=temp;
-
-while(num>0){
-power=1;
-int lastdigit=num%10;
-
-for (int i = 1;i<=count;i++){
-power=lastdigit*power;
+import java.util.ArrayList;
+public class Armstrong {
+    public static void main (String args []){
+//         Input: N = 153  
+// Output: true  
+// Explanation: 153 = (1^3) + (5^3) + (3^3) = 1 + 125 + 27 = 153  
+ int input = 153;
+ int input1=input;
+ int count = 0;
+ int sum=0;
+ ArrayList <Integer>arr = new ArrayList<>();
+ while (input>0){
+    int lastdigit = input %10;
+    arr.add(lastdigit);
+    input=input/10;
+    count++;
+ }
+for (int i =0;i<arr.size();i++){
+   int value =  arr.get(i);
+   int exponentialvalue = (int)Math.pow(value,count);
+   
+   sum=sum+exponentialvalue;
 }
- 
-sum=sum+power;
-num=num/10;}
-
-return sum;}
-
-public static void main(String args[]){
-Scanner scanner = new Scanner(System.in);
-System.out.print("Enter a number to verify Armstrong: ");
-int num = scanner.nextInt();
-int value = arm(num);
-
-if (value == num){
-System.out.print(num+" "+"Its a armstrong");
+if (sum==input1){
+    System.out.println("Its armstrong");}
+else {
+    System.out.println("Its not armstrong"); 
 }
 
-else{
-System.out.print(num+" "+"Its not a armstrong");
-}
 
-scanner.close();
-
-}
-
+    }
 }
